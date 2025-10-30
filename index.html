@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Rasmus - Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header id="hero" class="section hero">
+    <div class="wrapper hero-inner">
+      <div class="hero-text">
+        <h1 class="headline-xl">
+          Rasmus Jildholt<br />
+          <span class="accent">UX-driven utvecklare & 3D-artist</span>
+        </h1>
+        <p class="lead">
+          Jag skapar interaktiva webbupplevelser där design, funktion och känsla samverkar. Jag skapar också
+          konstnärliga 3D-renderingar i Blender.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="#projects">Se mina projekt</a>
+          <a class="btn btn-ghost" href="#contact">Kontakta mig</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="img-frame">
+          <img src="./Images/Rasmus_J.webp" alt="bild på Rasmus Jildholt" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about" class="section about">
+      <div class="wrapper">
+        <h2 class="headline-l section-title">Om mig</h2>
+        <div class="about-layout">
+          <div class="about-text">
+            <p>
+              Jag vill jobba inom spel eller webbbranschen som UX-designer eller fullstack
+              utvecklare. Jag gillar att ta en idé från skiss till fungerande
+              prototyp, att göra den användbar, visuellt unik och tekniskt robust.
+            </p>
+            <p>
+              Jag har jobbat i många grupprojekt inom webbutveckling, byggt egna webbaserade projekt och ägnar mig åt
+              3D-modellering med fokus på karaktärer på fritiden.
+            </p>
+          </div>
+
+          <div class="about-skills-card card">
+            <h3 class="headline-s">Styrkor</h3>
+            <ul class="tag-list">
+              <li class="tag">UX / wireframes</li>
+              <li class="tag">Fullstack-utveckling</li>
+              <li class="tag">Iterativ prototyping</li>
+              <li class="tag">Responsiv design</li>
+              <li class="tag">3D-modellering & rendering</li>
+              <li class="tag">Data lagring & hantering</li>
+              <li class="tag">Teamwork / projekt arbete</li>
+              <li class="tag">Agil metodik & flexibel design process</li>
+              <li class="tag">Git samt Github hantering</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="wrapper">
+        <h2 class="headline-l section-title">Projekt</h2>
+
+        <h3 class="headline-m projects-sub">Webb & UX</h3>
+        <div class="projects-grid">
+
+          <article class="project-card card" data-modal-target="project1Modal">
+            <div class="project-card-img">
+              <img src="./Images/ceasarsguide.jpg" alt="Skärmbild från webbprojekt" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <h4 class="headline-s">Individuellt webbprojekt [Tom's & Caesar's Guide to Chemistry]</h4>
+              <p class="project-card-role">Roll: Designer & utvecklare</p>
+              <p class="project-card-desc">
+                En webbguide jag byggde själv från grunden. Fokus på
+                att lära ut information om ett indie spel.
+              </p>
+
+            </div>
+            <button class="project-card-cta btn-text" data-open-modal>
+              Läs mer →
+            </button>
+          </article>
+
+          <article class="project-card card" data-modal-target="project2Modal">
+            <div class="project-card-img">
+              <img src="./Images/get food.jpg" alt="Bild från grupprojekt 1" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <h4 class="headline-s">Grupprojekt: [Get Food]</h4>
+              <p class="project-card-role">Roll: Interaktivitet (JS) & backend</p>
+              <p class="project-card-desc">
+                Ett grupprojekt där vi tog fram en prototyp som fetchar från en API, där den automatiskt filtrerar
+                närliggande resturanger baserat på plats och filter.
+              </p>
+            </div>
+            <button class="project-card-cta btn-text" data-open-modal>
+              Läs mer →
+            </button>
+          </article>
+
+          <article class="project-card card" data-modal-target="project3Modal">
+            <div class="project-card-img">
+              <img src="./Images/Iot labb.jpg" alt="Bild från grupprojekt 2" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <h4 class="headline-s">Grupprojekt: [Prototyp Iot-lab för SMF 2.0]</h4>
+              <p class="project-card-role">Roll: Fullstack-utveckling (HTML, CSS, JS) & backend</p>
+              <p class="project-card-desc">
+                Ett projekt med en klient på LNU där jag och ett team designade en ny sida för [Projekt: Iot-lab för
+                SMF 2.0].
+              </p>
+            </div>
+            <button class="project-card-cta btn-text" data-open-modal>
+              Läs mer →
+            </button>
+          </article>
+
+        </div>
+
+        <h3 class="headline-m projects-sub">3D & Rendering</h3>
+
+        <div class="projects-intro-wrapper">
+          <p class="projects-intro">
+            På fritiden ägnar jag mig åt 3D-modellering och rendering, med fokus på karaktärer och figurer. Jag tycker
+            om
+            att skapa egna scener genom att kombinera gratis modeller med min egna design och komposition. Utöver det
+            har
+            jag
+            erfarenhet av att modellera, texturera och rigga mina egna objekt från scratch.
+          </p>
+
+          <p class="projects-intro">
+            Mitt kreativa fokus ligger på konstnärliga kompositioner, där jag ofta eftersträvar en
+            pixel-art-inspirerad stil direkt i Blender.
+            Jag lägger stor vikt vid karaktärernas positionering, scenplanering och hur Blenders compositing-verktyg kan
+            användas för att förverkliga en unik visuell stil vid varje skapelse.
+          </p>
+        </div>
+
+
+
+        <div class="gallery">
+          <button class="gallery-item" data-img="./Images/caesar.webp" data-modal-target="imgModal">
+            <img src="./Images/caesar.webp" alt="3D render 1" loading="lazy" />
+          </button>
+
+          <button class="gallery-item" data-img="./Images/album cover.webp" data-modal-target="imgModal">
+            <img src="./Images/album cover.webp" alt="3D render 2" loading="lazy" />
+          </button>
+
+          <button class="gallery-item" data-img="./Images/ww2 render.webp" data-modal-target="imgModal">
+            <img src="./Images/ww2 render.webp" alt="3D render 3" />
+          </button>
+
+          <button class="gallery-item" data-img="./Images/helldiver.webp" data-modal-target="imgModal">
+            <img src="./Images/helldiver.webp" alt="3D render 4" loading="lazy" />
+          </button>
+
+          <button class="gallery-item" data-img="./Images/Inspector.webp" data-modal-target="imgModal">
+            <img src="./Images/Inspector.webp" alt="3D render 5" loading="lazy" />
+          </button>
+
+          <button class="gallery-item" data-img="./Images/the field.avif" data-modal-target="imgModal">
+            <img src="./Images/the field.avif" alt="3D render 6" loading="lazy" />
+          </button>
+          <button class="gallery-item" data-img="./Images/cavalry.webp" data-modal-target="imgModal">
+            <img src="./Images/cavalry.webp" alt="3D render 7" loading="lazy" />
+          </button>
+          <button class="gallery-item" data-img="./Images/da_monsterrrr.webp" data-modal-target="imgModal">
+            <img src="./Images/da_monsterrrr.webp" alt="3D render 8" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section process">
+      <div class="wrapper">
+        <h2 class="headline-l section-title">Min process</h2>
+
+        <ol class="process-list">
+          <li class="process-item card">
+            <h4 class="headline-s">1. Förstå problemet</h4>
+            <p>
+              Jag börjar med att definiera vad målgruppen försöker uppnå och
+              varför; detta styr alla designbeslut genom projektets gång.
+            </p>
+          </li>
+
+          <li class="process-item card">
+            <h4 class="headline-s">2. Skissa & testa snabbt</h4>
+            <p>
+              Jag tar fram wireframes / prototyper och testar användarflödet tidigt
+              innan man lägger tid på detaljer.
+            </p>
+          </li>
+
+          <li class="process-item card">
+            <h4 class="headline-s">3. Bygga funktioner</h4>
+            <p>
+              Antingen kodar jag själv eller samarbetar med andra i teamet för
+              att implementera det som testats och designats. Jag lägger fokus på skalbarhet och tydlighet om någon
+              annan ska jobba vidare på min kod.
+            </p>
+          </li>
+
+          <li class="process-item card">
+            <h4 class="headline-s">4. Iterera</h4>
+            <p>
+              Jag justerar utifrån användar testad feedback och ser till att upplevelsen är
+              tydlig, snabb och snygg, inte bara att “det funkar”.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="wrapper contact-inner card">
+        <h2 class="headline-l section-title">Kontakt</h2>
+        <p class="lead">
+          Vill du prata om praktik, juniorroll eller samarbete?
+        </p>
+
+        <ul class="contact-list">
+          <li><strong>Mail:</strong> <a class="accent-link"
+              href="mailto:rasmus.jildholt@gmail.com">rasmus.jildholt@gmail.com</a></li>
+          <li><strong>GitHub:</strong> <a class="accent-link" href="https://github.com/DoloremIpsumIV" target="_blank"
+              rel="noopener">github.com/DoloremIpsumIV</a></li>
+          <li><strong>LinkedIn:</strong> <a class="accent-link" href="https://www.linkedin.com/in/rasmus-j-353541358/"
+              target="_blank" rel="noopener">linkedin.com/in/rasmus</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+
+  <div class="modal-backdrop" data-modal-backdrop hidden></div>
+
+  <section class="modal card" id="project1Modal" role="dialog" aria-modal="true" aria-labelledby="project1Title" hidden>
+    <button class="modal-close btn-close" data-close-modal aria-label="Stäng">✕</button>
+    <h3 class="headline-m" id="project1Title">Individuellt webbprojekt [Tom's & Caesar's Guide to Chemistry]</h3>
+    <p class="modal-role"><strong>Roll:</strong> Allt (design, frontend, funktionalitet)</p>
+    <p class="modal-text">
+      Ett individuellt projekt där jag designade och utvecklade en webbapplikation
+      från grunden. Jag byggde gränssnittet, strukturen och logiken. Fokus låg
+      på en design som är enkel att läsa och informativ, samt att utveckla information från andra källor om mer nischade
+      spelmekaniker för indie spelet <a href="https://spacestation14.com/" class="accent-link" target="_blank"
+        rel="noopener">Space Station 14</a>.
+    </p>
+    <p class="modal-text">
+      Tekniskt använde jag HTML, CSS och JS. En utmaning var
+      att implementera text animationer på en sida för att uppnå en "hacker effekt", som jag löste genom
+      att med JavaScript applicera ett gaussiskt sudd över texten när man skrollar neråt, samt att slumpmässigt byta
+      ut bokstäver i all text styckvis tills de formade sina korrekta meningar. (Fortfarande WIP)
+    </p>
+    <button class="project-card-cta btn-text">
+      <a href="https://caesarsguide.space/index.html" class="accent-link" target="_blank" rel="noopener me">Länk till
+        projektet →</a>
+    </button>
+  </section>
+
+  <section class="modal card" id="project2Modal" role="dialog" aria-modal="true" aria-labelledby="project2Title" hidden>
+    <button class="modal-close btn-close" data-close-modal aria-label="Stäng">✕</button>
+    <h3 class="headline-m" id="project2Title">Grupprojekt: [Get Food]</h3>
+    <p class="modal-role"><strong>Roll:</strong> Interaktivitet (JS) & backend</p>
+    <p class="modal-text">
+      Jag jobbade med ett team och tog fram en fungerande prototyp som hämtar JSON data från en API och sedan
+      dynamiskt renderar ut information om resturanger i kort. Den hämtar data baserat på användarens plats
+      (geolocation) eller
+      utplacerad
+      position inom Småland / Öland. Användare kan spara och sortera resturangerna i anpassningsbara kategorier, samt
+      spela ett "Tinder-liknande spel"
+      spel för att få ut en kategori av mat som de gillar mest. Det finns också en sida där man kan söka efter alla
+      resturangers
+      namn/kategorier.
+    </p>
+    <p class="modal-text">
+      Det var ett tufft men extremt lärorikt projekt som gav mig många lärdomar i dynamisk fetching, sortering av stora
+      mängder data samt att jobba effektivt med andra programmerare i ett mindre team. Vi strukturerade upp våra
+      arbetsuppgifter och deadlines på ett
+      agilt samt flexibelt sätt för att lyckas med projektet.
+    </p>
+    <button class="project-card-cta btn-text">
+      <a href="https://getfoodproject.netlify.app/" class="accent-link" target="_blank" rel="noopener">Länk till
+        projektet →</a>
+    </button>
+  </section>
+
+  <section class="modal card" id="project3Modal" role="dialog" aria-modal="true" aria-labelledby="project3Title" hidden>
+    <button class="modal-close btn-close" data-close-modal aria-label="Stäng">✕</button>
+    <h3 class="headline-m" id="project3Title">Grupprojekt: [Prototyp Iot-lab för SMF 2.0]</h3>
+    <p class="modal-role"><strong>Roll:</strong> Fullstack-utveckling (HTML, CSS, JS) & backend</p>
+    <p class="modal-text">
+
+    </p>
+    <p class="modal-text">
+      Detta var ett projekt som pågick med en klient från Linnéuniversitetet där jag och två andra formade ett team
+      och designade en prototyp som skulle visa upp deras pilotstudier och projekt på ett stiligt sätt. Här satt jag med
+      implementeringen och visningen av all media på sidan, såsom bilder, videos, text o.s.v. Jag skapade också ett
+      sökfält som filtrerar och dynamiskt renderar pilot studierna. Jag skapade också ett smidigt sätt att rendera ut de
+      individuella projekten på en sida baserat på deras unika ID.
+    </p>
+    <p class="modal-text">
+      Jag jobbade med alla delar av projektet, från HTML, CSS och JS till data hantering i JSON format. Jag jobbade nära
+      med en annan grupp medlem och vi kooordinerade våra arbetsområden och commits på ett väldigt harmoniskt sätt.
+      Både klienten och teamet var väldigt nöjda med vår slutprototyp.
+    </p>
+    <button class="project-card-cta btn-text">
+      <a href="https://iot-lab-smf.netlify.app/" class="accent-link" target="_blank" rel="noopener">Länk till
+        projektet →</a>
+    </button>
+  </section>
+
+  <section class="modal card modal--img" id="imgModal" role="dialog" aria-modal="true" aria-labelledby="imgModalTitle"
+    hidden>
+    <button class="modal-close btn-close" data-close-modal aria-label="Stäng">✕</button>
+    <div class="modal-img-wrapper">
+      <img id="imgModalPreview" src="" alt="Förstorad 3D-bild" />
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
