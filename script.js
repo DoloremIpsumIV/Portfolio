@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mediaVideo.src = src;
       mediaVideo.hidden = false;
       mediaVideo.load();
-      mediaVideo.play().catch(() => {});
+      mediaVideo.play().catch(() => { });
     } else if (mediaImage) {
       mediaImage.src = src;
       mediaImage.hidden = false;
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   $$('video[autoplay][muted]').forEach((video) => {
-    video.play().catch(() => {});
+    video.play().catch(() => { });
   });
 
   const GRAVEFALL_SOURCE_PALETTE = {
@@ -231,6 +231,46 @@ document.addEventListener("DOMContentLoaded", () => {
         ['Dying', `${enemyRoot}/CryptImpaler_Dying_T.png`],
         ['Killed', `${enemyRoot}/CryptImpaler_Killed_T.png`]
       ]
+    },
+    crystalhusk: {
+      name: 'Crystal Husk',
+      frames: [
+        ['Idle', `${enemyRoot}/CrystalHusk_Idle_T.png`],
+        ['Hurt', `${enemyRoot}/CrystalHusk_Hurt_T.png`],
+        ['Bruised', `${enemyRoot}/CrystalHusk_Bruised_T.png`],
+        ['Dying', `${enemyRoot}/CrystalHusk_Dying_T.png`],
+        ['Killed', `${enemyRoot}/CrystalHusk_Killed_T.png`]
+      ]
+    },
+    ghoul: {
+      name: 'Ghoul',
+      frames: [
+        ['Idle', `${enemyRoot}/Ghoul_Idle_T.png`],
+        ['Hurt', `${enemyRoot}/Ghoul_Hurt_T.png`],
+        ['Bruised', `${enemyRoot}/Ghoul_Bruised_T.png`],
+        ['Dying', `${enemyRoot}/Ghoul_Dying_T.png`],
+        ['Killed', `${enemyRoot}/Ghoul_Killed_T.png`]
+      ]
+    },
+    goblin: {
+      name: 'Goblin',
+      frames: [
+        ['Idle', `${enemyRoot}/Goblin_Idle_T.png`],
+        ['Hurt', `${enemyRoot}/Goblin_Hurt_T.png`],
+        ['Bruised', `${enemyRoot}/Goblin_Bruised_T.png`],
+        ['Dying', `${enemyRoot}/Goblin_Dying_T.png`],
+        ['Killed', `${enemyRoot}/Goblin_Killed_T.png`]
+      ]
+    },
+    hydragon: {
+      name: 'Hy Dragon',
+      frames: [
+        ['Idle', `${enemyRoot}/HyDragon_Idle_T.png`],
+        ['Hurt', `${enemyRoot}/HyDragon_Hurt_T.png`],
+        ['Bruised', `${enemyRoot}/HyDragon_Bruised_T.png`],
+        ['Dying', `${enemyRoot}/HyDragon_Dying_T.png`],
+        ['Killed', `${enemyRoot}/HyDragon_Killed_T.png`]
+      ]
     }
   };
 
@@ -314,23 +354,76 @@ document.addEventListener("DOMContentLoaded", () => {
     return stateName;
   }
 
-  const spriteCards = $$('.sprite-card');
+  async function getPreparedSprite(sprite, frameIndex) {
+    if (!sprite || !sprite.frames?.length) return null;
+    const [, src] = sprite.frames[frameIndex % sprite.frames.length];
+    const image = await loadImage(src);
+    const sourceCanvas = document.createElement('canvas');
+    sourceCanvas.width = image.width;
+    sourceCanvas.height = image.height;
+    const sourceCtx = sourceCanvas.getContext('2d', { willReadFrequently: true });
+    sourceCtx.clearRect(0, 0, sourceCanvas.width, sourceCanvas.height);
+    sourceCtx.drawImage(image, 0, 0);
+    applyPaletteSwap(sourceCtx, sourceCanvas.width, sourceCanvas.height, sprite.theme);
+    return sourceCanvas;
+  }
 
-  if (spriteCards.length) {
-    spriteCards.forEach((card, cardIndex) => {
-      const key = card.getAttribute('data-gravefall-key');
+  async function drawSpriteGroup(canvas, group, frameStep) {
+    if (!canvas || !group) return;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.imageSmoothingEnabled = false;
+
+    const columns = group.columns || 3;
+    const rows = group.rows || 2;
+    const slots = columns * rows;
+    const gap = 12;
+    const cellWidth = (canvas.width - gap * (columns + 1)) / columns;
+    const cellHeight = (canvas.height - gap * (rows + 1)) / rows;
+
+    for (let index = 0; index < slots; index += 1) {
+      const key = group.keys[index % group.keys.length];
       const sprite = gravefallSprites[key];
-      const canvas = $('.sprite-card-canvas', card);
-      let frameIndex = cardIndex % Math.max(1, sprite?.frames?.length || 1);
+      if (!sprite) continue;
+      const prepared = await getPreparedSprite(sprite, frameStep + index);
+      if (!prepared) continue;
 
-      const renderThumb = async () => {
-        if (!sprite || !canvas) return;
-        await drawSprite(canvas, sprite, frameIndex);
-        frameIndex = (frameIndex + 1) % sprite.frames.length;
-      };
+      const col = index % columns;
+      const row = Math.floor(index / columns);
+      const x = gap + col * (cellWidth + gap);
+      const y = gap + row * (cellHeight + gap);
+      const scale = Math.max(1, Math.floor(Math.min((cellWidth * 1) / prepared.width, (cellHeight * 1) / prepared.height)));
+      const drawWidth = prepared.width * scale;
+      const drawHeight = prepared.height * scale;
+      const offsetX = Math.round(x + (cellWidth - drawWidth) / 2);
+      const offsetY = Math.round(y + (cellHeight - drawHeight) / 2);
 
-      renderThumb();
-      window.setInterval(renderThumb, 1150 + cardIndex * 90);
-    });
+      ctx.drawImage(prepared, 0, 0, prepared.width, prepared.height, offsetX, offsetY, drawWidth, drawHeight);
+    }
+  }
+
+  const gravefallGroupCanvas = $('#gravefallGroupCanvas');
+
+  if (gravefallGroupCanvas) {
+    const spriteGroups = [
+      { keys: ['fighter', 'ranger'], columns: 3, rows: 2 },
+      { keys: ['wizard', 'assassin'], columns: 3, rows: 2 },
+      { keys: ['bonecaller', 'cryptimpaler'], columns: 3, rows: 2 },
+      { keys: ['crystalhusk', 'ghoul'], columns: 3, rows: 2 },
+      { keys: ['goblin', 'hydragon'], columns: 3, rows: 2 }
+    ];
+    let groupIndex = 0;
+    let frameStep = 0;
+
+    const renderGroup = () => {
+      drawSpriteGroup(gravefallGroupCanvas, spriteGroups[groupIndex], frameStep).catch(() => { });
+      frameStep += 1;
+      if (frameStep % 3 === 0) {
+        groupIndex = (groupIndex + 1) % spriteGroups.length;
+      }
+    };
+
+    renderGroup();
+    window.setInterval(renderGroup, 1200);
   }
 });
