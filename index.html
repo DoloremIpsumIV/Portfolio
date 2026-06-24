@@ -78,9 +78,9 @@
 
         <article class="featured-project card" data-modal-target="gravefallModal">
           <div class="featured-project-media">
-            <button class="gravefall-front gallery-item" type="button" data-open-modal aria-label="Öppna GraveFall">
+            <div class="gravefall-front">
               <img src="./Images/GravefallFront.png" alt="GraveFall projektbild" loading="lazy" />
-            </button>
+            </div>
           </div>
           <div class="featured-project-body">
             <p class="project-kicker">URVAL AV PROJEKT</p>
@@ -98,7 +98,7 @@
         <h3 class="headline-m projects-sub">Webb & UX</h3>
         <div class="projects-grid projects-grid--compact">
           <article class="project-card card" data-modal-target="marinSonarModal">
-            <div class="project-card-img project-card-img--abstract"><span>Marin Sonar</span></div>
+            <div class="project-card-img"><img src="./Images/marin-sonar.jpg" alt="Bild från Marin Sonar" loading="lazy" /></div>
             <div class="project-card-body">
               <h4 class="headline-s">Marin Sonar</h4>
               <p class="project-card-role">Mobilanpassad PWA</p>
@@ -130,7 +130,7 @@
             </div><button class="project-card-cta btn-text" data-open-modal>Läs mer →</button>
           </article>
           <article class="project-card card" data-modal-target="hpcModal">
-            <div class="project-card-img project-card-img--abstract"><span>HPC för SMF</span></div>
+            <div class="project-card-img"><img src="./Images/hpc for smf.jpg" alt="Bild från HPC för SMF" loading="lazy" /></div>
             <div class="project-card-body">
               <h4 class="headline-s">HPC för SMF</h4>
               <p class="project-card-role">Videoproduktion 1</p>
@@ -182,10 +182,11 @@
             data-media-src="./Images/the field.avif" data-media-kind="image" data-media-label="The field"
             data-modal-target="mediaModal"><img src="./Images/the field.avif" alt="Animerad 3D-render"
               loading="lazy" /><span class="media-label">Animerad AVIF</span></button>
-          <button class="gallery-item media-card media-card--landscape" type="button" data-media-src="./Images/tider no text.webp"
-            data-media-kind="image" data-media-label="Tider no text" data-modal-target="mediaModal"><img
-              src="./Images/tider no text.webp" alt="Animerad 3D-render tider no text" loading="lazy" /><span
-              class="media-label">Animerad WebP</span></button>
+          <button class="gallery-item media-card media-card--landscape" type="button"
+            data-media-src="./Images/So you're the tider i've heard about.mp4" data-media-kind="video"
+            data-media-label="So you're the Tider I've heard about" data-modal-target="mediaModal"><video
+              src="./Images/So you're the tider i've heard about.mp4" muted loop autoplay playsinline
+              preload="metadata"></video><span class="media-label">Video</span></button>
           <button class="gallery-item media-card media-card--portrait" type="button" data-media-src="./Images/dnd edit.mp4"
             data-media-kind="video" data-media-label="DND edit" data-modal-target="mediaModal"><video
               src="./Images/dnd edit.mp4" muted loop autoplay playsinline preload="metadata"></video><span
@@ -194,6 +195,14 @@
             data-media-src="./Images/Pet the goober.mp4" data-media-kind="video" data-media-label="Pet the goober"
             data-modal-target="mediaModal"><video src="./Images/Pet the goober.mp4" muted loop autoplay playsinline
               preload="metadata"></video><span class="media-label">Video</span></button>
+          <button class="gallery-item media-card media-card--portrait" type="button"
+            data-media-src="./Images/They got a headache.mp4" data-media-kind="video" data-media-label="They got a headache"
+            data-modal-target="mediaModal"><video src="./Images/They got a headache.mp4" muted loop autoplay playsinline
+              preload="metadata"></video><span class="media-label">Video</span></button>
+          <button class="gallery-item media-card media-card--square" type="button" data-media-src="./Images/proot SPINNNN.gif"
+            data-media-kind="image" data-media-label="Proot SPINNNN" data-modal-target="mediaModal"><img
+              src="./Images/proot SPINNNN.gif" alt="Animerad proot gif" loading="lazy" /><span
+              class="media-label">GIF</span></button>
           <button class="gallery-item media-card media-card--wide" type="button" data-media-src="./Images/caesar.webp"
             data-media-kind="image" data-media-label="Caesar" data-modal-target="mediaModal"><img
               src="./Images/caesar.webp" alt="Animerad 3D-render Caesar" loading="lazy" /><span
@@ -289,32 +298,25 @@
     <p class="modal-text">GraveFall, Projektkurs 2 - större grupprojekt med design och implementation av
       dataspel/interaktiv lösning. Arbetade med iterativ design, prototypning, testning, Git/agilt arbetssätt och
       teknisk problemlösning. Roll som designer, programmerare, ljud, grafik, balansering och projektledare.</p>
-    <div class="gravefall-modal-showcase">
-      <div class="gravefall-modal-front">
-        <img src="./Images/GravefallFront.png" alt="GraveFall front" loading="lazy" />
-      </div>
-      <div class="gravefall-sprite-showcase" aria-label="GraveFall sprites">
-        <canvas id="gravefallPreviewCanvas" class="gravefall-preview-canvas" width="420" height="320"
-          aria-label="GraveFall sprite preview"></canvas>
-        <div class="gravefall-roster" aria-label="GraveFall karaktärer och fiender">
-          <button class="sprite-card is-active" type="button" data-gravefall-key="fighter">
-            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-          </button>
-          <button class="sprite-card" type="button" data-gravefall-key="ranger">
-            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-          </button>
-          <button class="sprite-card" type="button" data-gravefall-key="wizard">
-            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-          </button>
-          <button class="sprite-card" type="button" data-gravefall-key="assassin">
-            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-          </button>
-          <button class="sprite-card sprite-card--enemy" type="button" data-gravefall-key="bonecaller">
-            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-          </button>
-          <button class="sprite-card sprite-card--enemy" type="button" data-gravefall-key="cryptimpaler">
-            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-          </button>
+    <div class="gravefall-sprite-showcase" aria-label="GraveFall sprites">
+      <div class="gravefall-roster gravefall-roster--modal" aria-label="GraveFall karaktärer och fiender">
+        <div class="sprite-card" data-gravefall-key="fighter">
+          <canvas class="sprite-card-canvas" width="220" height="220" aria-hidden="true"></canvas>
+        </div>
+        <div class="sprite-card" data-gravefall-key="ranger">
+          <canvas class="sprite-card-canvas" width="220" height="220" aria-hidden="true"></canvas>
+        </div>
+        <div class="sprite-card" data-gravefall-key="wizard">
+          <canvas class="sprite-card-canvas" width="220" height="220" aria-hidden="true"></canvas>
+        </div>
+        <div class="sprite-card" data-gravefall-key="assassin">
+          <canvas class="sprite-card-canvas" width="220" height="220" aria-hidden="true"></canvas>
+        </div>
+        <div class="sprite-card sprite-card--enemy" data-gravefall-key="bonecaller">
+          <canvas class="sprite-card-canvas" width="220" height="220" aria-hidden="true"></canvas>
+        </div>
+        <div class="sprite-card sprite-card--enemy" data-gravefall-key="cryptimpaler">
+          <canvas class="sprite-card-canvas" width="220" height="220" aria-hidden="true"></canvas>
         </div>
       </div>
     </div>

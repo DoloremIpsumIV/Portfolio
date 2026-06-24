@@ -314,85 +314,23 @@ document.addEventListener("DOMContentLoaded", () => {
     return stateName;
   }
 
-  const previewCanvas = $('#gravefallPreviewCanvas');
-  const previewName = $('#gravefallPreviewName');
-  const previewState = $('#gravefallPreviewState');
   const spriteCards = $$('.sprite-card');
-  let activeSpriteKey = 'fighter';
-  let activePreviewTimer = null;
-
-  function setActiveSprite(key) {
-    activeSpriteKey = key;
-    spriteCards.forEach((card) => {
-      card.classList.toggle('is-active', card.getAttribute('data-gravefall-key') === key);
-    });
-
-    if (activePreviewTimer) window.clearInterval(activePreviewTimer);
-
-    let frameIndex = 0;
-    const sprite = gravefallSprites[key];
-    if (!sprite || !previewCanvas) return;
-
-    const render = async () => {
-      const stateName = await drawSprite(previewCanvas, sprite, frameIndex);
-      if (previewName) previewName.textContent = sprite.name;
-      if (previewState) previewState.textContent = stateName || '';
-      frameIndex = (frameIndex + 1) % sprite.frames.length;
-    };
-
-    render();
-    activePreviewTimer = window.setInterval(render, 1100);
-  }
 
   if (spriteCards.length) {
     spriteCards.forEach((card, cardIndex) => {
       const key = card.getAttribute('data-gravefall-key');
       const sprite = gravefallSprites[key];
       const canvas = $('.sprite-card-canvas', card);
-      const stateNode = $('[data-sprite-state]', card);
-      let frameIndex = 0;
+      let frameIndex = cardIndex % Math.max(1, sprite?.frames?.length || 1);
 
       const renderThumb = async () => {
         if (!sprite || !canvas) return;
-        const stateName = await drawSprite(canvas, sprite, frameIndex);
-        if (stateNode && stateName) stateNode.textContent = stateName;
+        await drawSprite(canvas, sprite, frameIndex);
         frameIndex = (frameIndex + 1) % sprite.frames.length;
       };
 
       renderThumb();
-      window.setInterval(renderThumb, 1200 + cardIndex * 120);
-
-      card.addEventListener('click', (event) => {
-        event.stopPropagation();
-        setActiveSprite(key);
-      });
+      window.setInterval(renderThumb, 1150 + cardIndex * 90);
     });
-
-    setActiveSprite(activeSpriteKey);
   }
-
-  const tiltCards = $$('.token-card');
-  tiltCards.forEach((card, index) => {
-    card.style.setProperty('--token-delay', `${index * 0.12}s`);
-
-    card.addEventListener('pointermove', (event) => {
-      const bounds = card.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width;
-      const y = (event.clientY - bounds.top) / bounds.height;
-      const rotateY = (x - 0.5) * 12;
-      const rotateX = (0.5 - y) * 12;
-      card.style.setProperty('--token-rotate-x', `${rotateX.toFixed(2)}deg`);
-      card.style.setProperty('--token-rotate-y', `${rotateY.toFixed(2)}deg`);
-      card.style.setProperty('--token-glow-x', `${(x * 100).toFixed(1)}%`);
-      card.style.setProperty('--token-glow-y', `${(y * 100).toFixed(1)}%`);
-    });
-
-    function clearTilt() {
-      card.style.setProperty('--token-rotate-x', '0deg');
-      card.style.setProperty('--token-rotate-y', '0deg');
-    }
-
-    card.addEventListener('pointerleave', clearTilt);
-    card.addEventListener('pointerup', clearTilt);
-  });
 });
