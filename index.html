@@ -78,52 +78,9 @@
 
         <article class="featured-project card" data-modal-target="gravefallModal">
           <div class="featured-project-media">
-            <div class="gravefall-stage">
-              <div class="gravefall-preview card">
-                <div class="gravefall-preview-top">
-                  <span class="project-kicker">Sprite showcase</span>
-                  <span class="gravefall-preview-state" id="gravefallPreviewState">Idle stance</span>
-                </div>
-                <canvas id="gravefallPreviewCanvas" class="gravefall-preview-canvas" width="420" height="320"
-                  aria-label="GraveFall sprite preview"></canvas>
-                <div class="gravefall-preview-meta">
-                  <strong id="gravefallPreviewName">Fighter</strong>
-                  <span>Karaktärer med färgbytta paletter och fiender med skadestates.</span>
-                </div>
-              </div>
-              <div class="gravefall-roster" aria-label="GraveFall karaktärer och fiender">
-                <button class="sprite-card is-active" type="button" data-gravefall-key="fighter">
-                  <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-                  <span class="sprite-card-name">Fighter</span>
-                  <span class="sprite-card-state" data-sprite-state>Idle stance</span>
-                </button>
-                <button class="sprite-card" type="button" data-gravefall-key="ranger">
-                  <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-                  <span class="sprite-card-name">Ranger</span>
-                  <span class="sprite-card-state" data-sprite-state>Idle stance</span>
-                </button>
-                <button class="sprite-card" type="button" data-gravefall-key="wizard">
-                  <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-                  <span class="sprite-card-name">Wizard</span>
-                  <span class="sprite-card-state" data-sprite-state>Idle stance</span>
-                </button>
-                <button class="sprite-card" type="button" data-gravefall-key="assassin">
-                  <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-                  <span class="sprite-card-name">Assassin</span>
-                  <span class="sprite-card-state" data-sprite-state>Idle stance</span>
-                </button>
-                <button class="sprite-card sprite-card--enemy" type="button" data-gravefall-key="bonecaller">
-                  <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-                  <span class="sprite-card-name">Bone Caller</span>
-                  <span class="sprite-card-state" data-sprite-state>Idle</span>
-                </button>
-                <button class="sprite-card sprite-card--enemy" type="button" data-gravefall-key="cryptimpaler">
-                  <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
-                  <span class="sprite-card-name">Crypt Impaler</span>
-                  <span class="sprite-card-state" data-sprite-state>Idle</span>
-                </button>
-              </div>
-            </div>
+            <button class="gravefall-front gallery-item" type="button" data-open-modal aria-label="Öppna GraveFall">
+              <img src="./Images/GravefallFront.png" alt="GraveFall projektbild" loading="lazy" />
+            </button>
           </div>
           <div class="featured-project-body">
             <p class="project-kicker">URVAL AV PROJEKT</p>
@@ -220,73 +177,39 @@
               href="https://bsky.app/profile/omc3d.bsky.social" class="accent-link" target="_blank" rel="noopener">Länk
               till projektet →</a></div>
         </article>
-        <div class="media-showcase" aria-label="3D-renderingar och video">
-          <div class="media-primary-grid">
-            <button class="gallery-item gallery-item--hero gallery-item--landscape" type="button"
-              data-media-src="./Images/the field.avif" data-media-kind="image" data-media-label="The field"
-              data-modal-target="mediaModal"><img src="./Images/the field.avif" alt="Animerad 3D-render"
-                loading="lazy" /><span class="media-label">Animerad AVIF</span></button>
-            <button class="gallery-item gallery-item--wide" type="button" data-media-src="./Images/tider no text.webp"
-              data-media-kind="image" data-media-label="Tider no text" data-modal-target="mediaModal"><img
-                src="./Images/tider no text.webp" alt="Animerad 3D-render tider no text" loading="lazy" /><span
-                class="media-label">Animerad WebP</span></button>
-            <button class="gallery-item gallery-item--portrait" type="button" data-media-src="./Images/dnd edit.mp4"
-              data-media-kind="video" data-media-label="DND edit" data-modal-target="mediaModal"><video
-                src="./Images/dnd edit.mp4" muted loop autoplay playsinline preload="metadata"></video><span
-                class="media-label">Video</span></button>
-            <button class="gallery-item gallery-item--landscape" type="button"
-              data-media-src="./Images/Pet the goober.mp4" data-media-kind="video" data-media-label="Pet the goober"
-              data-modal-target="mediaModal"><video src="./Images/Pet the goober.mp4" muted loop autoplay playsinline
-                preload="metadata"></video><span class="media-label">Video</span></button>
-          </div>
-          <div class="media-side-column">
-            <div class="token-panel card">
-              <div class="token-panel-head">
-                <p class="project-kicker">Pixel tokens</p>
-                <h5 class="headline-s">Interaktiv token-serie</h5>
-              </div>
-              <div class="token-strip" aria-label="Token-serie">
-                <button class="token-card" type="button" data-media-src="./Images/Alex Token Pixilated.png"
-                  data-media-kind="image" data-media-label="Alex Token" data-modal-target="mediaModal"><img
-                    src="./Images/Alex Token Pixilated.png" alt="Pixelerad token Alex" loading="lazy" /><span
-                    class="token-name">Alex</span></button>
-                <button class="token-card" type="button" data-media-src="./Images/Glorb Token Pixilated.png"
-                  data-media-kind="image" data-media-label="Glorb Token" data-modal-target="mediaModal"><img
-                    src="./Images/Glorb Token Pixilated.png" alt="Pixelerad token Glorb" loading="lazy" /><span
-                    class="token-name">Glorb</span></button>
-                <button class="token-card" type="button" data-media-src="./Images/Icarus Token Pixilated.png"
-                  data-media-kind="image" data-media-label="Icarus Token" data-modal-target="mediaModal"><img
-                    src="./Images/Icarus Token Pixilated.png" alt="Pixelerad token Icarus" loading="lazy" /><span
-                    class="token-name">Icarus</span></button>
-                <button class="token-card" type="button" data-media-src="./Images/Indigo Token Pixilated.png"
-                  data-media-kind="image" data-media-label="Indigo Token" data-modal-target="mediaModal"><img
-                    src="./Images/Indigo Token Pixilated.png" alt="Pixelerad token Indigo" loading="lazy" /><span
-                    class="token-name">Indigo</span></button>
-                <button class="token-card" type="button" data-media-src="./Images/Nicole Token Pixilated.png"
-                  data-media-kind="image" data-media-label="Nicole Token" data-modal-target="mediaModal"><img
-                    src="./Images/Nicole Token Pixilated.png" alt="Pixelerad token Nicole" loading="lazy" /><span
-                    class="token-name">Nicole</span></button>
-              </div>
-            </div>
-            <div class="media-secondary-grid">
-              <button class="gallery-item gallery-item--square" type="button" data-media-src="./Images/caesar.webp"
-                data-media-kind="image" data-media-label="Caesar" data-modal-target="mediaModal"><img
-                  src="./Images/caesar.webp" alt="Animerad 3D-render Caesar" loading="lazy" /><span
-                  class="media-label">Caesar</span></button>
-              <button class="gallery-item gallery-item--square" type="button"
-                data-media-src="./Images/da_monsterrrr.webp" data-media-kind="image" data-media-label="Da_monsterrrr"
-                data-modal-target="mediaModal"><img src="./Images/da_monsterrrr.webp"
-                  alt="Animerad 3D-render monster" loading="lazy" /><span class="media-label">Da_monsterrrr</span></button>
-              <button class="gallery-item gallery-item--square" type="button" data-media-src="./Images/helmet.webp"
-                data-media-kind="image" data-media-label="Helmet" data-modal-target="mediaModal"><img
-                  src="./Images/helmet.webp" alt="Animerad 3D-render helmet" loading="lazy" /><span
-                  class="media-label">Helmet</span></button>
-              <button class="gallery-item gallery-item--poster" type="button"
-                data-media-src="./Images/BOTW_Poster.webp" data-media-kind="image" data-media-label="BOTW Poster"
-                data-modal-target="mediaModal"><img src="./Images/BOTW_Poster.webp" alt="3D poster"
-                  loading="lazy" /><span class="media-label">Poster</span></button>
-            </div>
-          </div>
+        <div class="media-showcase media-showcase--clean" aria-label="3D-renderingar och video">
+          <button class="gallery-item media-card media-card--large media-card--landscape" type="button"
+            data-media-src="./Images/the field.avif" data-media-kind="image" data-media-label="The field"
+            data-modal-target="mediaModal"><img src="./Images/the field.avif" alt="Animerad 3D-render"
+              loading="lazy" /><span class="media-label">Animerad AVIF</span></button>
+          <button class="gallery-item media-card media-card--landscape" type="button" data-media-src="./Images/tider no text.webp"
+            data-media-kind="image" data-media-label="Tider no text" data-modal-target="mediaModal"><img
+              src="./Images/tider no text.webp" alt="Animerad 3D-render tider no text" loading="lazy" /><span
+              class="media-label">Animerad WebP</span></button>
+          <button class="gallery-item media-card media-card--portrait" type="button" data-media-src="./Images/dnd edit.mp4"
+            data-media-kind="video" data-media-label="DND edit" data-modal-target="mediaModal"><video
+              src="./Images/dnd edit.mp4" muted loop autoplay playsinline preload="metadata"></video><span
+              class="media-label">Video</span></button>
+          <button class="gallery-item media-card media-card--landscape" type="button"
+            data-media-src="./Images/Pet the goober.mp4" data-media-kind="video" data-media-label="Pet the goober"
+            data-modal-target="mediaModal"><video src="./Images/Pet the goober.mp4" muted loop autoplay playsinline
+              preload="metadata"></video><span class="media-label">Video</span></button>
+          <button class="gallery-item media-card media-card--wide" type="button" data-media-src="./Images/caesar.webp"
+            data-media-kind="image" data-media-label="Caesar" data-modal-target="mediaModal"><img
+              src="./Images/caesar.webp" alt="Animerad 3D-render Caesar" loading="lazy" /><span
+              class="media-label">Caesar</span></button>
+          <button class="gallery-item media-card media-card--square" type="button"
+            data-media-src="./Images/da_monsterrrr.webp" data-media-kind="image" data-media-label="Da_monsterrrr"
+            data-modal-target="mediaModal"><img src="./Images/da_monsterrrr.webp" alt="Animerad 3D-render monster"
+              loading="lazy" /><span class="media-label">Da_monsterrrr</span></button>
+          <button class="gallery-item media-card media-card--square" type="button" data-media-src="./Images/helmet.webp"
+            data-media-kind="image" data-media-label="Helmet" data-modal-target="mediaModal"><img
+              src="./Images/helmet.webp" alt="Animerad 3D-render helmet" loading="lazy" /><span
+              class="media-label">Helmet</span></button>
+          <button class="gallery-item media-card media-card--poster" type="button" data-media-src="./Images/BOTW_Poster.webp"
+            data-media-kind="image" data-media-label="BOTW Poster" data-modal-target="mediaModal"><img
+              src="./Images/BOTW_Poster.webp" alt="3D poster" loading="lazy" /><span
+              class="media-label">Poster</span></button>
         </div>
       </div>
     </section>
@@ -344,8 +267,9 @@
               href="mailto:rasmus.jildholt@gmail.com">rasmus.jildholt@gmail.com</a></li>
           <li><strong>GitHub:</strong> <a class="accent-link" href="https://github.com/DoloremIpsumIV" target="_blank"
               rel="noopener">github.com/DoloremIpsumIV</a></li>
-          <li><strong>LinkedIn:</strong> <a class="accent-link" href="https://www.linkedin.com/in/rasmus-jildholt-4420a428a/"
-              target="_blank" rel="noopener">linkedin.com/in/rasmus</a></li>
+          <li><strong>LinkedIn:</strong> <a class="accent-link"
+              href="https://www.linkedin.com/in/rasmus-jildholt-4420a428a/" target="_blank"
+              rel="noopener">linkedin.com/in/rasmus</a></li>
           <li><strong>Bluesky:</strong> <a class="accent-link" href="https://bsky.app/profile/omc3d.bsky.social"
               target="_blank" rel="noopener">bsky.app/profile/omc3d.bsky.social</a></li>
         </ul>
@@ -365,11 +289,37 @@
     <p class="modal-text">GraveFall, Projektkurs 2 - större grupprojekt med design och implementation av
       dataspel/interaktiv lösning. Arbetade med iterativ design, prototypning, testning, Git/agilt arbetssätt och
       teknisk problemlösning. Roll som designer, programmerare, ljud, grafik, balansering och projektledare.</p>
-    <div class="modal-media-grid"><img
-        src="./Images/GravefallFront.png" alt="GraveFall front"
-        loading="lazy" /></div><button class="project-card-cta btn-text"><a
-        href="https://onemancrusade.itch.io/gravefall" class="accent-link" target="_blank" rel="noopener">Länk till
-        projektet →</a></button>
+    <div class="gravefall-modal-showcase">
+      <div class="gravefall-modal-front">
+        <img src="./Images/GravefallFront.png" alt="GraveFall front" loading="lazy" />
+      </div>
+      <div class="gravefall-sprite-showcase" aria-label="GraveFall sprites">
+        <canvas id="gravefallPreviewCanvas" class="gravefall-preview-canvas" width="420" height="320"
+          aria-label="GraveFall sprite preview"></canvas>
+        <div class="gravefall-roster" aria-label="GraveFall karaktärer och fiender">
+          <button class="sprite-card is-active" type="button" data-gravefall-key="fighter">
+            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
+          </button>
+          <button class="sprite-card" type="button" data-gravefall-key="ranger">
+            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
+          </button>
+          <button class="sprite-card" type="button" data-gravefall-key="wizard">
+            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
+          </button>
+          <button class="sprite-card" type="button" data-gravefall-key="assassin">
+            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
+          </button>
+          <button class="sprite-card sprite-card--enemy" type="button" data-gravefall-key="bonecaller">
+            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
+          </button>
+          <button class="sprite-card sprite-card--enemy" type="button" data-gravefall-key="cryptimpaler">
+            <canvas class="sprite-card-canvas" width="160" height="160" aria-hidden="true"></canvas>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="project-card-cta btn-text"><a href="https://onemancrusade.itch.io/gravefall" class="accent-link"
+        target="_blank" rel="noopener">Länk till projektet →</a></button>
   </section>
 
   <section class="modal card" id="project1Modal" role="dialog" aria-modal="true" aria-labelledby="project1Title" hidden>
