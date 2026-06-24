@@ -1499,7 +1499,6 @@ button:focus,
   display: block;
   width: auto !important;
   height: auto !important;
-  max-width: calc(96vw - 2rem) !important;
   max-height: calc(96dvh - 5.25rem) !important;
   object-fit: contain !important;
   object-position: center center !important;
